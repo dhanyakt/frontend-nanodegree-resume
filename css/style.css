@@ -168,6 +168,13 @@ span {
   text-align: center;
 }
 
+/* Adding Skills
+#skills{
+  background-color: #e5eecc;
+  flex-direction: column;
+  flex-wrap:wrap;
+} */
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
