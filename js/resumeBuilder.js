@@ -9,7 +9,7 @@ var bio = {
         "loc": "Charlotte,NC",
         "location": "107 Assembly Drive, Mooresville ,NC, 28117"
     },
-    "skills": ["java", "javascript", "jquery", "HTML5", "JSON"],
+    "skills": ["HTML5","CSS3","javascript","json","java","markdown"],
     "welcomeMessage": "Welcome to the world of responsive web development",
     "biopic": "images/dhanya.jpg",
     "display" : function() {
