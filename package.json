@@ -1,0 +1,29 @@
+{
+  "name": "frontend-nanodegree-resume",
+  "version": "1.0.0",
+  "description": "1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select \"View Course Materials.\"\r 2. Go through the videos and assignments in this course to learn the JavaScript necessary to build your resume.\r 3. Review your work against the Project Rubric (on the next page).\r 4. When you are satisfied with your project, submit it according to the Submission Instructions on the next page.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhanyakt/frontend-nanodegree-resume.git"
+  },
+  "author": "dhanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhanyakt/frontend-nanodegree-resume/issues"
+  },
+  "homepage": "https://github.com/dhanyakt/frontend-nanodegree-resume#readme",
+  "devDependencies": {
+    "grunt": "^0.4.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-minify-html": "^2.1.0",
+    "grunt-pagespeed": "^2.0.1",
+    "load-grunt-tasks": "^3.5.2",
+    "ngrok": "^2.2.3"
+  }
+}

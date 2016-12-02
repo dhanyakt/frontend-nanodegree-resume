@@ -1,6 +1,6 @@
 'use-strict';
 
-var ngrok = require('ngrok');
+require('load-grunt-tasks')(grunt);
 
 module.exports = function(grunt) {
 
@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                 files:[{
                     expand:'true',
                     src:['js/*.js'],
-                    dest:'js/',
+                    dest:'docs/',
                     ext:'.min.js'
                 }]
             },
@@ -22,21 +22,37 @@ module.exports = function(grunt) {
             },
         },
 
-// Plugin to know the pagespeed score in mobile and desktop.
-        pagespeed: {
+        //css minification
+        cssmin: {
+            first_target: {
+                files: [{
+                    expand: true,
+                    cwd: 'css/',
+                    src: ['*.css'],
+                    dest: 'css/',
+                    ext: '.min.css'
+                }]
+            },
+        },
+
+        // Inlining
+        inline: {
+            dist: {
+                options: {
+                    cssmin: true
+                },
+                src: 'index.html',
+                dest: 'docs/index.html'
+            }
+        },
+
+        minifyHtml: {
             options: {
-                nokey: true,
-                locale: "en_GB",
-                threshold:30
+                cdata: true
             },
-            local: {
-                options: {
-                    strategy: "desktop"
-                }
-            },
-            mobile: {
-                options: {
-                    strategy: "mobile"
+            dist: {
+                files: {
+                    'docs/index.html': 'docs/index.html'
                 }
             },
         },
@@ -45,24 +61,9 @@ module.exports = function(grunt) {
     //Load the plugin that provides uglified task
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-pagespeed');
-
-    // Integration of ngrok with pagespeed.
-    grunt.registerTask('psi-ngrok','Run pagespeed with ngrok', function() {
-        var done = this.async();
-        var port = 8000;
-        ngrok.connect(port, function(err,url){
-            if(err !== null) {
-                grunt.fail.fatal(err);
-                return done();
-            }
-
-            grunt.config.set('pagespeed.options.url', url);
-            grunt.task.run('pagespeed');
-            done();
-        });
-    });
+    grunt.loadNpmTasks('grunt-inline');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     //Default tasks
-    grunt.registerTask('default',['jshint','uglify','psi-ngrok']);
+    grunt.registerTask('default',['jshint','uglify','cssmin','inline','minifyHtml']);
 };
