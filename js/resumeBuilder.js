@@ -1,6 +1,6 @@
 //Create bio object
 var bio = {
-    "name": "DHANYA T KUTTIKKATT",
+    "name": "DHANYA KUTTIKKATT THILAKAN",
     "role": "Web Developer",
     "contacts": {
         "email": "dhanyakt@gmail.com",
@@ -9,7 +9,7 @@ var bio = {
         "loc": "Charlotte,NC",
         "location": "107 Assembly Drive, Mooresville ,NC, 28117"
     },
-    "skills": ["HTML5","CSS3","javascript","json","java","markdown"],
+    "skills": ["HTML5","CSS3","javascript","json","java","jQuery"],
     "welcomeMessage": "Welcome to the world of responsive web development",
     "biopic": "images/dhanya.jpg",
     "display" : function() {
@@ -118,21 +118,25 @@ var work = {
 //Create project object using JSON
 var projects = {
     "projects": [{
-        "title": "Portfolio Sites",
-        "dates": "April 2016 - Current",
-        "description": "Developed portfolio sites and blog according to the given spec.",
-        "images": ["images/logo.png"]
+        "title": "Portfolio Site",
+        "dates": "April 2016",
+        "description": "A single page application with responsive images using Graphics magic"+
+            "and responsive layout.",
+        "images": ["images/portfolio.jpg"]
     }, {
-        "title": "Resume",
-        "dates": "April 2016 - ",
-        "description": "Developed online resume.",
-        "images": ["images/logo.png"]
+        "title": "Neighbhorhood Map",
+        "dates": " September 2016",
+        "description": "A single page application built on materialize framework," +
+            "uses MVVM pattern by knockout.js framework and Ajax request for yelp API" +
+            " integration.",
+        "images": ["images/map.jpg"]
 
     }, {
-        "title": "DND Application",
-        "dates": "August 2013",
-        "description": "Designed and developed an Android application",
-        "images": ["images/dnd.webp"]
+        "title": "Arcade Game",
+        "dates": "November 2016",
+        "description": "Designed and developed player, enemies, and other game entities"+
+            "in JavaScript's object-oriented pseudo-classical style.",
+        "images": ["images/game.jpg"]
     }]
 };
 

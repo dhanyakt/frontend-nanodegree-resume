@@ -94,7 +94,7 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 13px;
   color: #f3f3f3;
   line-height: 28px;
 }
@@ -168,9 +168,6 @@ span {
   text-align: center;
 }
 
-
-
-
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -211,10 +208,8 @@ span {
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
+  #skills,
   .biopic {
     display: block;
-  }
-  li {
-    list-style-type: circle;
   }
 }
